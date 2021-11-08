@@ -1,116 +1,115 @@
-## xenSTAT.dll
-基于 C#的SDK包 ，可使用C#或Python语言为 xenSTAT仪器做 二次开发
+xenSTAT SDK:
 
-### xenSTAT SDK 说明：
-**xenSTAT SDK:**
+1 基本工具
+2 运行方法
+3 参数设置
+4 示例程序
+5 修改记录
 
-​	1 基本工具
-​	2 运行方法
-​	3 参数设置
-​	4 示例程序
-​	5 修改记录
+1. 基本工具(属性)：
 
-1. **基本工具(属性)：**
+1.1. public string comName
+	获取串口号
+	返回：串口号，如“COM1"
 
-   1.1. public string comName
-   	获取串口号
-   	返回：串口号，如“COM1"
+1.2. public string comDes
+	获取描述（名称）
+	返回：串口设备描述
 
-   1.2. public string comDes
-   	获取描述（名称）
-   	返回：串口设备描述
-
-   1.3. public bool isOpen
-   	判断设备是否连接
-
-   1.4. public double[] returnValue	
-   	测试数据（单次）
-   	注意：回调函数中使用，取得仪器发来的测试数据（单次）
-
-   1.5. public int[] defaultCVParm
-   	获取CV缺省参数
-   	参数（7个）数组
-
-   1.6. public int[] defaultSWVParm
-   	获取SWV缺省参数
-   	参数（7个）数组
-
-   1.7. public int[] defaultITParm
-   	获取IT缺省参数
-   	参数（4个）数组
-
-   1.8. public int[] deaultDPVParm
-   	获取DPV缺省参数
-   	参数（8个）数组
-
-   1.9 public bool isTestEnd
-   	测试是否结束
-   	在用户回调函数中使用
-
-   2.0 public event EventHandler myEvent;
-   	设定用户回调函数
+1.3. public bool isOpen
+	判断设备是否连接
 
 
+1.4. public double[] returnValue	
+	测试数据（单次）
+	注意：回调函数中使用，取得仪器发来的测试数据（单次）
+	
+1.5. public int[] defaultCVParm
+	获取CV缺省参数
+	参数（7个）数组
+	
 
-2. **运行方法：**
+1.6. public int[] defaultSWVParm
+	获取SWV缺省参数
+	参数（7个）数组
 
-   2.1 public void RunCV()
-      	运行CV测试
+	
+1.7. public int[] defaultITParm
+	获取IT缺省参数
+	参数（4个）数组
 
-   2.2 public void RunSWV()
-      	运行SWV测试
 
-   2.3 public void RunIT()
-      	运行IT测试
+1.8. public int[] deaultDPVParm
+	获取DPV缺省参数
+	参数（8个）数组
 
-   2.4. public void RunDPV()		
-      	运行DPV测试
+1.9 public bool isTestEnd
+	测试是否结束
+	在用户回调函数中使用
+
+2.0 public event EventHandler myEvent;
+	设定用户回调函数
+
+2. 运行方法：
+
+2.1 public void RunCV()
+	运行CV测试
+
+2.2 public void RunSWV()
+	运行SWV测试
+
+2.3 public void RunIT()
+	运行IT测试
+
+2.4. public void RunDPV()		
+	运行DPV测试
 
 
 
-3. **参数设置：**
+3. 参数设置：
 
-   3.1. public bool SetCVParameters(int initE, int highR, int lowE, int scanR, int segments, int step, int Rtial)
-   	设置CV测试参数
-   	参数：CV设置的7个参数
-   	返回：true（成功），false(失败)
+3.1. public bool SetCVParameters(int initE, int highR, int lowE, int scanR, int segments, int step, int Rtial)
+	设置CV测试参数
+	参数：CV设置的7个参数
+	返回：true（成功），false(失败)
 
-   3.2. public bool SetSWVParameters(int initE, int finalE, int incrE, int ampltd, int freq, int sampleW, int Rtial)
-   	设置SWV测试参数
-   	参数：SWV设置的7个参数
-   	返回：true（成功），false(失败)
+3.2. public bool SetSWVParameters(int initE, int finalE, int incrE, int ampltd, int freq, int sampleW, int Rtial)
+	设置SWV测试参数
+	参数：SWV设置的7个参数
+	返回：true（成功），false(失败)
+	
+3.3. public bool SetITParameters(int initE, int runtime, int sampleP, int Rtial)
+	设置IT测试参数
+	参数：IT设置的4个参数
+	返回：true（成功），false(失败)
+	
+3.4. public bool SetDPVParameters(int initE, int finalE, int incrE, int ampltd, int pulseW, int pulseP, int sampleW, int Rtial)
+	设置DPV测试参数
+	参数：DPV设置的8个参数
+	返回：true（成功），false(失败)
+	
+3.5. public bool SetDefaultCVParm()
+	设置CV缺省参数
+	返回：true（成功），false(失败)
+	
+3.6. public bool SetDefaultSWVParm()
+	设置SWV缺省参数
+	返回：true（成功），false(失败)
+	
+3.7. public bool SetDefaultITParm()
+	设置IT缺省参数
+	返回：true（成功），false(失败)
 
-   3.3. public bool SetITParameters(int initE, int runtime, int sampleP, int Rtial)
-   	设置IT测试参数
-   	参数：IT设置的4个参数
-   	返回：true（成功），false(失败)
-
-   3.4. public bool SetDPVParameters(int initE, int finalE, int incrE, int ampltd, int pulseW, int pulseP, int sampleW, int Rtial)
-   	设置DPV测试参数
-   	参数：DPV设置的8个参数
-   	返回：true（成功），false(失败)
-
-   3.5. public bool SetDefaultCVParm()
-   	设置CV缺省参数
-   	返回：true（成功），false(失败)
-
-   3.6. public bool SetDefaultSWVParm()
-   	设置SWV缺省参数
-   	返回：true（成功），false(失败)
-
-   3.7. public bool SetDefaultITParm()
-   	设置IT缺省参数
-   	返回：true（成功），false(失败)
-
-   3.8. public bool SetDefaultDPVParm()
-   	设置DPV缺省参数
-   	返回：true（成功），false(失败)
+3.8. public bool SetDefaultDPVParm()
+	设置DPV缺省参数
+	返回：true（成功），false(失败)
 
 
 
 4 示例程序：
 4.1 C#示例：
-```c#
+
+==================================================
 using xenSTAT;
 
 namespace xenDLLSample1
@@ -136,13 +135,13 @@ namespace xenDLLSample1
 				MessageBox.Show("设备连接失败！！");
             }
 			//设定用户自己的回调处理函数
-			myDll.MyEvent += MyRelProess;
+			myDll.myEvent += MyRelProess;
 		}
 		private void button1_Click(object sender, EventArgs e)
 		{
 			//缺省参数设置
 			bool rel = false;
-			rel = myDll.setDefaultCVParm();
+			rel = myDll.SetDefaultCVParm();
 			if (rel)
 			{
 				MessageBox.Show("设置成功");
@@ -159,7 +158,7 @@ namespace xenDLLSample1
 			int a7 = int.Parse(tb7.Text);
 			//设置参数
 			bool rel = false;
-			rel = myDll.SetCVParameters(a1, a2, a3, a4, a5, a6, a7);
+			rel = myDll.setCVParameters(a1, a2, a3, a4, a5, a6, a7);
 			if (rel)
 			{
 				MessageBox.Show("设置成功");
@@ -180,6 +179,7 @@ namespace xenDLLSample1
 				{
 					double[] relList = myDll.returnValue;
 					rtb1.AppendText(relList[0].ToString() + " " + relList[1].ToString() + "\n");
+
 				}));
 			}
 		}
@@ -202,11 +202,11 @@ namespace xenDLLSample1
 		}
 	}
 }
-```
+======================================================
 
 4.2 Python示例：
 
-```python
+======================================================
 
 	import time
 	import clr
@@ -214,7 +214,7 @@ namespace xenDLLSample1
 	from xenSTAT import *
 
 	myDll = IOContrl()
-    
+
 	def rf(o,e):
 	  if myDll.isTestEnd==1:
 		print("测试结束")
@@ -269,9 +269,7 @@ namespace xenDLLSample1
 
 	#End
 
-```
-
-
+==========================================================	  
 
 5 修改记录：
 5.1 2021-11-04 添加适合python调用API
