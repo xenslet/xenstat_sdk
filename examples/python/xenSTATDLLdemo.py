@@ -1,7 +1,7 @@
 
 import time
 import clr
-clr.AddReference('xenSTAT')
+clr.AddReference('../../lib/xenSTAT')
 from xenSTAT import *
 
 myDll = IOContrl()

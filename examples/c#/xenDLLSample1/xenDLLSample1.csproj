@@ -64,9 +64,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="xenSTAT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\xenSTAT.dll</HintPath>
+    <Reference Include="xenSTAT">
+      <HintPath>..\..\..\lib\xenSTAT.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
