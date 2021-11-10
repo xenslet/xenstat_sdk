@@ -39,7 +39,7 @@
    	获取IT缺省参数
    	参数（4个）数组
 
-   1.8. public int[] deaultDPVParm
+   1.8. public int[] defaultDPVParm
    	获取DPV缺省参数
    	参数（8个）数组
 
@@ -276,3 +276,4 @@ namespace xenDLLSample1
 5 修改记录：
 5.1 2021-11-04 添加适合python调用API
 5.2 2021-11-04 修改运行调用API，删除python调用API
+5.3 2021-11-10 修改 deaultDPVParm ==> defaultDPVParm
