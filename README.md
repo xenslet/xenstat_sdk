@@ -1,6 +1,6 @@
 ## xenSTAT.dll
 基于 C#的SDK包 ，可使用C#或Python语言为 xenSTAT仪器做 二次开发
-
+![image](https://github.com/xenslet/xenstat_sdk/blob/feab0b943a90bd00759e9ec432a1353c363d0f05/imgforreadme/xenstat_github.png)
 ### xenSTAT SDK 说明：
 **xenSTAT SDK:**
 
