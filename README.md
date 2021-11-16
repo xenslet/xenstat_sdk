@@ -281,3 +281,10 @@ namespace xenDLLSample1
 5.1 2021-11-04 添加适合python调用API
 5.2 2021-11-04 修改运行调用API，删除python调用API
 5.3 2021-11-10 修改 deaultDPVParm ==> defaultDPVParm
+
+
+## License
+
+[Apache License 2.0](http://www.apache.org/licenses/)
+
+Copyright (c) 2021-present, xenslet
